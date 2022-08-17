@@ -1,11 +1,5 @@
 <div class="box box-info padding-1">
-    <div class="box-body">
-        
-        <div class="form-group">
-            {{ Form::label('sl') }}
-            {{ Form::text('sl', $caab->sl, ['class' => 'form-control' . ($errors->has('sl') ? ' is-invalid' : ''), 'placeholder' => 'Sl']) }}
-            {!! $errors->first('sl', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+    <div class="box-body row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3">
         <div class="form-group">
             {{ Form::label('lat') }}
             {{ Form::text('lat', $caab->lat, ['class' => 'form-control' . ($errors->has('lat') ? ' is-invalid' : ''), 'placeholder' => 'Lat']) }}
@@ -28,7 +22,7 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
+    <div class="box-footer mt20 mt-3">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>

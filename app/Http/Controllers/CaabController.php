@@ -16,8 +16,7 @@ class CaabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-     public function api($page=0){
+    public function api($page=0){
         $data['page'] = $page;
         if ($page==0) {
             $data['items'] = Caab::all();
@@ -30,6 +29,7 @@ class CaabController extends Controller
     public function index()
     {
         $caabs = Caab::paginate();
+
         return view('caab.index', compact('caabs'))
             ->with('i', (request()->input('page', 1) - 1) * $caabs->perPage());
     }

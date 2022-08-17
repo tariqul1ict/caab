@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Caab
  *
- * @property $sl
+ * @property $id
  * @property $lat
  * @property $long
  * @property $height
  * @property $airport
+ * @property $created_at
+ * @property $updated_at
  *
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class Caab extends Model
 {
-    protected $table = 'caab';
+    
     static $rules = [
-		'sl' => 'required',
 		'airport' => 'required',
     ];
 
@@ -31,7 +32,7 @@ class Caab extends Model
      *
      * @var array
      */
-    protected $fillable = ['sl','lat','long','height','airport'];
+    protected $fillable = ['lat','long','height','airport'];
 
 
 

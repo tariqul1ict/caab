@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Sl:</strong>
-                            {{ $caab->sl }}
-                        </div>
-                        <div class="form-group">
                             <strong>Lat:</strong>
                             {{ $caab->lat }}
                         </div>
