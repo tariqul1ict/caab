@@ -18,3 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('/caabs', CaabController::class);
 Route::get('/api/{page?}', [CaabController::class, 'api']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
