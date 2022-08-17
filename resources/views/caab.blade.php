@@ -16,6 +16,8 @@
         $response = Illuminate\Support\Facades\Http::get($url)->json();
         return $response;
     }
+    $totalInvalid = 0;
+    $airportInvalid = 0;
     @endphp
     <div class="mx-auto my-4" style="max-width: 800px;">
         <table @if ($page == 0) id="dtable" @endif class="table table-sm table-striped">
@@ -58,6 +60,9 @@
                         <td class="text-end">
                             @if ($difference2 > 3)
                                 <span class="badge  bg-warning text-dark">Invalid</span>
+                                @php
+                                    $totalInvalid++;
+                                @endphp
                             @endif
 
                         </td>
@@ -65,6 +70,9 @@
                             @if ($airport == '')
                                 <div>
                                     <span class="badge  bg-danger text-light">Ouside of OLS</span>
+                                    @php
+                                        $airportInvalid++;
+                                    @endphp
                                 </div>
                             @endif
                         </td>
@@ -80,6 +88,11 @@
         @if ($page != 0)
             {!! $items->links() !!}
         @endif
+        <div>
+            <br>
+            {{ $totalInvalid }} <br>
+            {{ $airportInvalid }}
+        </div>
     </div>
 @endsection
 
