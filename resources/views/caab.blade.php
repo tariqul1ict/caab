@@ -90,8 +90,18 @@
         @endif
         <div>
             <br>
-            {{ $totalInvalid }} <br>
-            {{ $airportInvalid }}
+            <table>
+                <tr>
+                    <th width="180">Total Invalid </th>
+                    <td width="20">:</td>
+                    <td> {{ $totalInvalid }}</td>
+                </tr>
+                <tr>
+                    <th>Total Airport Invalid </th>
+                    <td>:</td>
+                    <td> {{ $airportInvalid }}</td>
+                </tr>
+            </table>
         </div>
     </div>
 @endsection
